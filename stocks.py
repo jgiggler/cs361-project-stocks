@@ -16,12 +16,12 @@ def get_stock_price(symbol):
     date_start = data.get('time_start')
     date_end = data.get('time_end')
     
-    STOCK_API_URL = f"https://api.polygon.io/v2/aggs/ticker/{symbol}/range/0/day/{date_start}/{date_end}?apiKey={API_KEY}"
+    STOCK_API_URL = f"https://api.polygon.io/v2/aggs/ticker/{symbol}/range/1/day/{date_start}/{date_end}?apiKey={API_KEY}"
     
     # Call API with user submitted data
     response = requests.get(f"{STOCK_API_URL}")
     data = response.json()
-    # print(data)
+    print(data)
     return jsonify(data)
 
 if __name__ == '__main__':
